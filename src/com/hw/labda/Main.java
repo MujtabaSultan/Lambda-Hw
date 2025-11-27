@@ -20,13 +20,15 @@ public class Main {
 
     private <E> void printList(List<E> list) {
         // TODO Print out all the elements in the supplied list:
+        list.forEach(System.out::println);
+
 
     }
 
     public void getEmployeesOver50k() {
         // TODO Print a list of all employees that earn $50,000 or more
         List<Employee> employees = null;
-        employees=this.employees.stream().filter(p->p.getSalary()>500000).toList();
+        employees=this.employees.stream().filter(p->p.getSalary()>50000).toList();
         printList(employees);
     }
 
@@ -76,8 +78,9 @@ public class Main {
     }
 
     public static void main(String[] args) {
-
-        Main me = new Main();
+//
+     Main me = new Main();
+     me.printList(me.employees);
         me.getMaxSalary();
         me.getMinSalary();
         me.getAverageSalaries();
